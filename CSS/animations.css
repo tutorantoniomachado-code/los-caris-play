@@ -1,0 +1,311 @@
+/*
+=========================================================
+Los Caris Play
+animations.css
+Versión Alpha 0.1
+=========================================================
+*/
+
+/*==========================================
+    APARICIÓN GENERAL
+==========================================*/
+
+.fade-in{
+
+    animation:fadeIn .40s ease forwards;
+
+}
+
+.fade-out{
+
+    animation:fadeOut .35s ease forwards;
+
+}
+
+/*==========================================
+    ENTRADA DE LAS CARTAS
+==========================================*/
+
+.card-enter{
+
+    animation:cardEnter .40s ease;
+
+}
+
+.card-change{
+
+    animation:cardChange .30s ease;
+
+}
+
+/*==========================================
+    PULSO DEL TEMPORIZADOR
+==========================================*/
+
+.timer-pulse{
+
+    animation:timerPulse .80s infinite;
+
+}
+
+/*==========================================
+    BOTÓN PRINCIPAL
+==========================================*/
+
+.button-pulse{
+
+    animation:buttonPulse 2s infinite;
+
+}
+
+/*==========================================
+    APARICIÓN DEL DIALOG
+==========================================*/
+
+.dialog-show{
+
+    animation:dialogOpen .25s ease forwards;
+
+}
+
+/*==========================================
+    DESAPARICIÓN DEL DIALOG
+==========================================*/
+
+.dialog-hide{
+
+    animation:dialogClose .20s ease forwards;
+
+}
+
+/*==========================================
+    GIRO SUAVE
+==========================================*/
+
+.rotate{
+
+    animation:rotate360 .45s ease;
+
+}
+
+/*==========================================
+    REBOTE
+==========================================*/
+
+.bounce{
+
+    animation:bounce .55s ease;
+
+}
+
+/*==========================================
+    KEYFRAMES
+==========================================*/
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes fadeOut{
+
+    from{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        opacity:0;
+
+    }
+
+}
+
+@keyframes cardEnter{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(18px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes cardChange{
+
+    0%{
+
+        opacity:.25;
+
+        transform:scale(.96);
+
+    }
+
+    50%{
+
+        opacity:.70;
+
+        transform:scale(1.02);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+@keyframes timerPulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.05);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+@keyframes buttonPulse{
+
+    0%{
+
+        box-shadow:0 0 0 0 rgba(37,99,235,.45);
+
+    }
+
+    70%{
+
+        box-shadow:0 0 0 16px rgba(37,99,235,0);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 0 0 rgba(37,99,235,0);
+
+    }
+
+}
+
+@keyframes dialogOpen{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(18px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes dialogClose{
+
+    from{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        opacity:0;
+
+        transform:translateY(10px);
+
+    }
+
+}
+
+@keyframes rotate360{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+@keyframes bounce{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    35%{
+
+        transform:translateY(-8px);
+
+    }
+
+    60%{
+
+        transform:translateY(3px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}

@@ -1,0 +1,516 @@
+/*
+=========================================================
+Los Caris Play
+app.css
+Versión Alpha 0.1
+=========================================================
+*/
+
+/*=======================================================
+  BODY
+=======================================================*/
+
+body{
+
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+
+    background:
+        radial-gradient(circle at top,#24324a 0%,#111827 60%);
+
+}
+
+/*=======================================================
+  APP
+=======================================================*/
+
+#app{
+
+    width:min(100%,var(--app-width));
+
+    min-height:100vh;
+
+    padding:24px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+}
+
+/*=======================================================
+  SPLASH
+=======================================================*/
+
+#splash{
+
+    position:fixed;
+
+    inset:0;
+
+    background:var(--bg);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:var(--z-splash);
+
+}
+
+.splash-content{
+
+    text-align:center;
+
+}
+
+.logo{
+
+    font-size:5rem;
+
+    margin-bottom:20px;
+
+}
+
+.splash-content h1{
+
+    font-size:2.3rem;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.splash-content p{
+
+    color:var(--text-soft);
+
+    font-size:1rem;
+
+}
+
+.spinner{
+
+    width:65px;
+
+    height:65px;
+
+    margin:35px auto 0;
+
+    border-radius:50%;
+
+    border:5px solid rgba(255,255,255,.15);
+
+    border-top:5px solid var(--white);
+
+    animation:spin .9s linear infinite;
+
+}
+
+/*=======================================================
+  HEADER
+=======================================================*/
+
+header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    min-height:var(--header-height);
+
+}
+
+header h1{
+
+    font-size:1.9rem;
+
+    font-weight:700;
+
+}
+
+header small{
+
+    display:block;
+
+    margin-top:4px;
+
+    color:var(--text-soft);
+
+}
+
+/*=======================================================
+  BOTÓN CONFIGURACIÓN
+=======================================================*/
+
+.iconButton{
+
+    width:54px;
+
+    height:54px;
+
+    border-radius:50%;
+
+    background:var(--surface);
+
+    box-shadow:var(--shadow-small);
+
+    font-size:1.3rem;
+
+}
+
+.iconButton:hover{
+
+    background:var(--surface-light);
+
+    transform:rotate(20deg);
+
+}
+
+/*=======================================================
+  TEMPORIZADOR
+=======================================================*/
+
+.timerPanel{
+
+    background:var(--surface);
+
+    border-radius:var(--radius-large);
+
+    padding:28px;
+
+    box-shadow:var(--shadow-medium);
+
+}
+
+#timer{
+
+    text-align:center;
+
+    font-size:var(--font-size-3xl);
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+}
+
+.progress{
+
+    margin-top:18px;
+
+    width:100%;
+
+    height:14px;
+
+    background:var(--surface-dark);
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+}
+
+#progressBar{
+
+    width:100%;
+
+    height:100%;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            var(--success),
+
+            #16a34a
+
+        );
+
+}
+
+/*=======================================================
+  CARTAS
+=======================================================*/
+
+.cards{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+}
+
+.card{
+
+    background:var(--surface);
+
+    border-radius:var(--radius-large);
+
+    padding:28px;
+
+    min-height:200px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    box-shadow:var(--shadow-medium);
+
+}
+
+.action{
+
+    border-left:7px solid var(--action);
+
+}
+
+.condition{
+
+    border-left:7px solid var(--condition);
+
+}
+
+.cardTitle{
+
+    font-size:.90rem;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    color:var(--text-soft);
+
+}
+
+.cardBody{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    font-size:2rem;
+
+    font-weight:600;
+
+    padding:10px;
+
+}
+
+/*=======================================================
+  CONTROLES
+=======================================================*/
+
+.controls{
+
+    margin-top:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:16px;
+
+}
+
+.controls button{
+
+    height:78px;
+
+    border-radius:22px;
+
+    background:var(--surface);
+
+    color:var(--white);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    box-shadow:var(--shadow-small);
+
+    font-size:1rem;
+
+}
+
+.controls button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.primary{
+
+    background:var(--primary)!important;
+
+}
+
+.primary:hover{
+
+    background:var(--primary-hover)!important;
+
+}
+
+/*=======================================================
+  DIALOG
+=======================================================*/
+
+dialog{
+
+    width:min(95%,420px);
+
+    border-radius:24px;
+
+    padding:30px;
+
+}
+
+dialog h2{
+
+    margin-bottom:25px;
+
+}
+
+dialog form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+dialog label{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+dialog input[type=number]{
+
+    width:90px;
+
+    background:var(--surface-dark);
+
+    padding:8px 12px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+}
+
+menu{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+menu button{
+
+    padding:12px 18px;
+
+    border-radius:14px;
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+/*=======================================================
+  RESPONSIVE
+=======================================================*/
+
+@media(max-width:480px){
+
+    #app{
+
+        padding:18px;
+
+    }
+
+    #timer{
+
+        font-size:3rem;
+
+    }
+
+    .cardBody{
+
+        font-size:1.6rem;
+
+    }
+
+    .controls{
+
+        gap:12px;
+
+    }
+
+    .controls button{
+
+        height:72px;
+
+        font-size:.9rem;
+
+    }
+
+}
+
+/*=======================================================
+  ANIMACIÓN
+=======================================================*/
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}

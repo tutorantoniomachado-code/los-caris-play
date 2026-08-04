@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <meta
+        name="theme-color"
+        content="#111827">
+
+    <meta
+        name="description"
+        content="Los Caris Play - Juego para parejas">
+
+    <title>❤️ Los Caris Play</title>
+
+    <!-- Tipografía -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Estilos -->
+
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+</head>
+
+<body>
+
+    <!-- ==============================================
+         SPLASH
+    =============================================== -->
+
+    <div id="splash">
+
+        <div class="splash-content">
+
+            <div class="logo">
+
+                ❤️
+
+            </div>
+
+            <h1>
+
+                Los Caris Play
+
+            </h1>
+
+            <p>
+
+                Alpha 0.1
+
+            </p>
+
+            <div class="spinner"></div>
+
+        </div>
+
+    </div>
+
+    <!-- ==============================================
+         APP
+    =============================================== -->
+
+    <div id="app" class="hidden">
+
+        <!-- CABECERA -->
+
+        <header>
+
+            <div>
+
+                <h1>
+
+                    Los Caris Play
+
+                </h1>
+
+                <small>
+
+                    Juego para parejas
+
+                </small>
+
+            </div>
+
+            <button
+                id="btnSettings"
+                class="iconButton"
+                aria-label="Configuración">
+
+                ⚙️
+
+            </button>
+
+        </header>
+
+        <!-- TEMPORIZADOR -->
+
+        <section class="timerPanel">
+
+            <div
+                id="timer">
+
+                02:00
+
+            </div>
+
+            <div class="progress">
+
+                <div
+                    id="progressBar">
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CARTAS -->
+
+        <section class="cards">
+
+            <article class="card action">
+
+                <div class="cardTitle">
+
+                    ❤️ Acción
+
+                </div>
+
+                <div
+                    id="actionText"
+                    class="cardBody">
+
+                    Pulsa Iniciar
+
+                </div>
+
+            </article>
+
+            <article class="card condition">
+
+                <div class="cardTitle">
+
+                    🔥 Condición
+
+                </div>
+
+                <div
+                    id="conditionText"
+                    class="cardBody">
+
+                    Esperando...
+
+                </div>
+
+            </article>
+
+        </section>
+
+        <!-- CONTROLES -->
+
+        <section class="controls">
+
+            <button
+                id="btnStart"
+                class="primary">
+
+                ▶
+
+                <span>
+
+                    Iniciar
+
+                </span>
+
+            </button>
+
+            <button
+                id="btnPause">
+
+                ⏸
+
+                <span>
+
+                    Pausa
+
+                </span>
+
+            </button>
+
+            <button
+                id="btnReset">
+
+                ↻
+
+                <span>
+
+                    Reiniciar
+
+                </span>
+
+            </button>
+
+        </section>
+
+    </div>
+
+    <!-- ==============================================
+         AJUSTES
+    =============================================== -->
+
+    <dialog id="settingsDialog">
+
+       <form id="settingsForm">
+
+            <h2>
+
+                Ajustes
+
+            </h2>
+
+            <label>
+
+                Tiempo largo
+
+                <input
+                    id="longTime"
+                    type="number"
+                    value="120"
+                    min="10"
+                    max="600"
+                    step="10">
+
+            </label>
+
+            <label>
+
+                Tiempo corto
+
+                <input
+                    id="shortTime"
+                    type="number"
+                    value="60"
+                    min="10"
+                    max="600"
+                    step="10">
+
+            </label>
+
+            <label class="switch">
+
+                <input
+                    id="enableSound"
+                    type="checkbox"
+                    checked>
+
+                Activar sonido
+
+            </label>
+
+            <label class="switch">
+
+                <input
+                    id="enableVibration"
+                    type="checkbox"
+                    checked>
+
+                Activar vibración
+
+            </label>
+
+            <menu>
+
+                <button   type="button" id="btnCancelSettings">
+
+                    Cancelar
+
+                </button>
+
+                <button
+        type="submit"
+        id="btnSaveSettings">
+
+        Guardar
+
+    </button>
+
+            </menu>
+
+        </form>
+
+    </dialog>
+
+    <!-- ==============================================
+         AUDIO
+    =============================================== -->
+
+    <audio
+        id="soundEnd"
+        preload="auto">
+
+        <source
+            src="assets/audio/bell.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+    <!-- ==============================================
+         JAVASCRIPT
+    =============================================== -->
+
+    <script
+        type="module"
+        src="js/app.js">
+
+    </script>
+
+</body>
+
+</html>continu

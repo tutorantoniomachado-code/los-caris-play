@@ -1,0 +1,290 @@
+/*
+=========================================================
+Los Caris Play
+reset.css
+Versión Alpha 0.1
+=========================================================
+*/
+
+/* ===========================
+   RESET GENERAL
+=========================== */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ===========================
+   HTML
+=========================== */
+
+html{
+
+    font-size:16px;
+
+    scroll-behavior:smooth;
+
+    -webkit-text-size-adjust:100%;
+
+}
+
+/* ===========================
+   BODY
+=========================== */
+
+body{
+
+    min-height:100vh;
+
+    font-family:var(--font-family);
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+    -webkit-font-smoothing:antialiased;
+
+    text-rendering:optimizeLegibility;
+
+}
+
+/* ===========================
+   IMÁGENES
+=========================== */
+
+img,
+picture{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+/* ===========================
+   BOTONES
+=========================== */
+
+button{
+
+    font:inherit;
+
+    color:inherit;
+
+    border:none;
+
+    outline:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    user-select:none;
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+/* ===========================
+   INPUTS
+=========================== */
+
+input,
+select,
+textarea{
+
+    font:inherit;
+
+    color:inherit;
+
+    outline:none;
+
+    border:none;
+
+    background:none;
+
+}
+
+/* ===========================
+   ENLACES
+=========================== */
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+/* ===========================
+   LISTAS
+=========================== */
+
+ul,
+ol{
+
+    list-style:none;
+
+}
+
+/* ===========================
+   TITULOS
+=========================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+    font-weight:inherit;
+
+}
+
+/* ===========================
+   DIALOG
+=========================== */
+
+dialog{
+
+    border:none;
+
+    background:var(--surface);
+
+    color:var(--text);
+
+}
+
+dialog::backdrop{
+
+    background:rgba(0,0,0,.60);
+
+    backdrop-filter:blur(4px);
+
+}
+
+/* ===========================
+   TABLAS
+=========================== */
+
+table{
+
+    border-collapse:collapse;
+
+    border-spacing:0;
+
+}
+
+/* ===========================
+   UTILIDADES
+=========================== */
+
+.hidden{
+
+    display:none !important;
+
+}
+
+.invisible{
+
+    visibility:hidden;
+
+}
+
+.disabled{
+
+    opacity:.5;
+
+    pointer-events:none;
+
+}
+
+/* ===========================
+   FOCUS
+=========================== */
+
+:focus-visible{
+
+    outline:3px solid var(--primary);
+
+    outline-offset:3px;
+
+}
+
+/* ===========================
+   SELECCIÓN DE TEXTO
+=========================== */
+
+::selection{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:var(--surface-dark);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--surface-light);
+
+    border-radius:999px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--primary);
+
+}
+
+/* ===========================
+   TRANSICIONES BÁSICAS
+=========================== */
+
+button,
+input,
+.card,
+.iconButton{
+
+    transition:
+        background var(--speed-normal) var(--ease),
+        color var(--speed-normal) var(--ease),
+        transform var(--speed-fast) var(--ease),
+        opacity var(--speed-fast) var(--ease),
+        box-shadow var(--speed-fast) var(--ease);
+
+}
+
+/* ===========================
+   EFECTO PULSACIÓN
+=========================== */
+
+button:active{
+
+    transform:scale(.97);
+
+}

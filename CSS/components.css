@@ -1,0 +1,301 @@
+/*
+=========================================================
+Los Caris Play
+components.css
+Versión Alpha 0.1
+=========================================================
+*/
+
+/*==========================================
+    TARJETAS
+==========================================*/
+
+.card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+    right:0;
+
+    height:5px;
+
+    opacity:.9;
+
+}
+
+.action::before{
+
+    background:linear-gradient(
+        90deg,
+        #EC4899,
+        #F472B6
+    );
+
+}
+
+.condition::before{
+
+    background:linear-gradient(
+        90deg,
+        #F97316,
+        #FB923C
+    );
+
+}
+
+.card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow-large);
+
+}
+
+.cardBody{
+
+    transition:
+        opacity .25s ease,
+        transform .25s ease;
+
+}
+
+.card.change{
+
+    animation:cardPulse .30s ease;
+
+}
+
+/*==========================================
+    BOTONES
+==========================================*/
+
+.controls button{
+
+    transition:
+        transform .20s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+
+}
+
+.controls button:hover{
+
+    box-shadow:var(--shadow-medium);
+
+}
+
+.controls button:active{
+
+    transform:scale(.96);
+
+}
+
+.primary{
+
+    color:white;
+
+}
+
+.primary:hover{
+
+    filter:brightness(1.08);
+
+}
+
+/*==========================================
+    BOTÓN CONFIGURACIÓN
+==========================================*/
+
+.iconButton{
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+
+}
+
+.iconButton:hover{
+
+    transform:rotate(25deg);
+
+}
+
+/*==========================================
+    BARRA PROGRESO
+==========================================*/
+
+.progress{
+
+    position:relative;
+
+}
+
+#progressBar{
+
+    transition:width .5s linear;
+
+}
+
+/*==========================================
+    ESTADOS TEMPORIZADOR
+==========================================*/
+
+.timer-warning #progressBar{
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #F59E0B,
+            #FBBF24
+        );
+
+}
+
+.timer-danger #progressBar{
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #EF4444,
+            #DC2626
+        );
+
+}
+
+.timer-danger #timer{
+
+    color:#F87171;
+
+}
+
+/*==========================================
+    DIALOG
+==========================================*/
+
+dialog{
+
+    animation:dialogShow .25s ease;
+
+}
+
+dialog label{
+
+    padding:10px 0;
+
+}
+
+dialog input[type="checkbox"]{
+
+    width:22px;
+
+    height:22px;
+
+    accent-color:var(--primary);
+
+}
+
+dialog input[type="number"]:focus{
+
+    outline:2px solid var(--primary);
+
+}
+
+/*==========================================
+    SPINNER
+==========================================*/
+
+.spinner{
+
+    filter:drop-shadow(0 0 10px rgba(255,255,255,.15));
+
+}
+
+/*==========================================
+    UTILIDADES
+==========================================*/
+
+.center{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.fade{
+
+    opacity:0;
+
+}
+
+.visible{
+
+    opacity:1;
+
+}
+
+/*==========================================
+    ANIMACIONES
+==========================================*/
+
+@keyframes cardPulse{
+
+    0%{
+
+        transform:scale(.96);
+
+    }
+
+    50%{
+
+        transform:scale(1.02);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+@keyframes dialogShow{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
