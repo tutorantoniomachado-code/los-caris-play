@@ -1,0 +1,348 @@
+/*
+=========================================================
+Los Caris Play
+components.css
+Versión Alpha 0.1
+=========================================================
+*/
+
+/*==========================================
+    TARJETAS
+==========================================*/
+
+/*=========================================================
+    CARTAS
+=========================================================*/
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:1.2rem;
+
+    margin:1.5rem 0;
+
+}
+
+.card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:180px;
+
+    padding:1.5rem;
+
+    border-radius:20px;
+
+    background:var(--color-surface);
+
+    border:2px solid rgba(255,255,255,.08);
+
+    box-shadow:0 8px 20px rgba(0,0,0,.20);
+
+    text-align:center;
+
+    transition:.25s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.card h2{
+
+    margin-bottom:1rem;
+
+    font-size:1.2rem;
+
+    font-weight:700;
+
+}
+
+.card p{
+
+    font-size:1.4rem;
+
+    font-weight:600;
+
+    line-height:1.5;
+
+}
+
+/*=========================================================
+    COLORES DE LAS CARTAS
+=========================================================*/
+
+.actionCard{
+
+    border-color:#ff6b6b;
+
+}
+
+.conditionCard{
+
+    border-color:#f7b731;
+
+}
+
+.placeCard{
+
+    border-color:#4dabf7;
+
+}
+
+/*=========================================================
+    MÓVIL
+=========================================================*/
+
+@media(max-width:768px){
+
+    .cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .card{
+
+        min-height:150px;
+
+    }
+
+    .card p{
+
+        font-size:1.2rem;
+
+    }
+
+}
+
+/*==========================================
+    BOTONES
+==========================================*/
+
+.controls button{
+
+    transition:
+        transform .20s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+
+}
+
+.controls button:hover{
+
+    box-shadow:var(--shadow-medium);
+
+}
+
+.controls button:active{
+
+    transform:scale(.96);
+
+}
+
+.primary{
+
+    color:white;
+
+}
+
+.primary:hover{
+
+    filter:brightness(1.08);
+
+}
+
+/*==========================================
+    BOTÓN CONFIGURACIÓN
+==========================================*/
+
+.iconButton{
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+
+}
+
+.iconButton:hover{
+
+    transform:rotate(25deg);
+
+}
+
+/*==========================================
+    BARRA PROGRESO
+==========================================*/
+
+.progress{
+
+    position:relative;
+
+}
+
+#progressBar{
+
+    transition:width .5s linear;
+
+}
+
+/*==========================================
+    ESTADOS TEMPORIZADOR
+==========================================*/
+
+.timer-warning #progressBar{
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #F59E0B,
+            #FBBF24
+        );
+
+}
+
+.timer-danger #progressBar{
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #EF4444,
+            #DC2626
+        );
+
+}
+
+.timer-danger #timer{
+
+    color:#F87171;
+
+}
+
+/*==========================================
+    DIALOG
+==========================================*/
+
+dialog{
+
+    animation:dialogShow .25s ease;
+
+}
+
+dialog label{
+
+    padding:10px 0;
+
+}
+
+dialog input[type="checkbox"]{
+
+    width:22px;
+
+    height:22px;
+
+    accent-color:var(--primary);
+
+}
+
+dialog input[type="number"]:focus{
+
+    outline:2px solid var(--primary);
+
+}
+
+/*==========================================
+    SPINNER
+==========================================*/
+
+.spinner{
+
+    filter:drop-shadow(0 0 10px rgba(255,255,255,.15));
+
+}
+
+/*==========================================
+    UTILIDADES
+==========================================*/
+
+.center{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.fade{
+
+    opacity:0;
+
+}
+
+.visible{
+
+    opacity:1;
+
+}
+
+/*==========================================
+    ANIMACIONES
+==========================================*/
+
+@keyframes cardPulse{
+
+    0%{
+
+        transform:scale(.96);
+
+    }
+
+    50%{
+
+        transform:scale(1.02);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+@keyframes dialogShow{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
