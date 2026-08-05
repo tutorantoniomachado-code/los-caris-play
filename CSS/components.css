@@ -6,78 +6,145 @@ Versión Alpha 0.1
 =========================================================
 */
 
-/*==========================================
-    TARJETAS
-==========================================*/
+/*=========================================================
+    CARTAS
+=========================================================*/
+
+.cards{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+    margin:20px 0;
+
+}
 
 .card{
 
     position:relative;
 
-    overflow:hidden;
+    display:flex;
 
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease,
-        border-color .25s ease;
+    flex-direction:column;
 
-}
+    justify-content:center;
 
-.card::before{
+    align-items:center;
 
-    content:"";
+    min-height:145px;
 
-    position:absolute;
+    padding:20px;
 
-    top:0;
-    left:0;
-    right:0;
+    border-radius:28px;
 
-    height:5px;
+    background:var(--color-surface);
 
-    opacity:.9;
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
 
-}
-
-.action::before{
-
-    background:linear-gradient(
-        90deg,
-        #EC4899,
-        #F472B6
-    );
-
-}
-
-.condition::before{
-
-    background:linear-gradient(
-        90deg,
-        #F97316,
-        #FB923C
-    );
+    transition:.25s;
 
 }
 
 .card:hover{
 
-    transform:translateY(-4px);
-
-    box-shadow:var(--shadow-large);
+    transform:translateY(-2px);
 
 }
 
-.cardBody{
+.card h2{
 
-    transition:
-        opacity .25s ease,
-        transform .25s ease;
+    width:100%;
+
+    margin-bottom:16px;
+
+    font-size:.95rem;
+
+    font-weight:600;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+    opacity:.85;
 
 }
 
-.card.change{
+.card p{
 
-    animation:cardPulse .30s ease;
+    font-size:2rem;
+
+    font-weight:700;
+
+    text-align:center;
+
+    line-height:1.25;
+
+    margin:0;
+
+}
+
+/*=========================================================
+    COLORES
+=========================================================*/
+
+.actionCard{
+
+    border-left:8px solid #ff4f8b;
+
+}
+
+.conditionCard{
+
+    border-left:8px solid #ff7a1a;
+
+}
+
+.placeCard{
+
+    border-left:8px solid #2f7cff;
+
+}
+
+/*=========================================================
+    MÓVIL
+=========================================================*/
+
+@media (max-width:768px){
+
+    .cards{
+
+        gap:14px;
+
+    }
+
+    .card{
+
+        min-height:120px;
+
+        padding:18px;
+
+        border-radius:22px;
+
+    }
+
+    .card h2{
+
+        font-size:.85rem;
+
+        margin-bottom:12px;
+
+    }
+
+    .card p{
+
+        font-size:1.55rem;
+
+        line-height:1.2;
+
+    }
 
 }
 
