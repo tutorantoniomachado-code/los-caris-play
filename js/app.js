@@ -14,57 +14,8 @@ import Timer from "./timer.js";
     DATOS DEL JUEGO
 =========================================================*/
 
-const ACTIONS = [
 
-    "Besar",
 
-    "Acariciar",
-
-    "Masajear",
-
-    "Sin las manos",
-
-    "Lamer",
-
-    "Chupar",
-
-    "Libre",
-
-];
-
-const CONDITIONS = [
-
-    "Con los ojos cerrados",
-
-    "Muy despacio",
-
-    "Sin utilizar las manos",
-
-    "De espaldas",
-
-    "Sin hablar",
-
-   "Solo con la boca",
-
-    "Solo con las manos",
-
-    "Libre",
-
-];
-const PLACES = [
-
-"En la boca",
-    "En la espalda",
-    "En el cuello",
-    "En el pecho",
-    "En la espalda",
-    "En los muslos",
-    "En la ingle",
-    "En los glúteos",
-    "En la parte baja de la espalda",
-    "Donde prefiera tu pareja"
-
-];
 
 /*=========================================================
     APLICACIÓN
@@ -78,11 +29,11 @@ class App {
             Datos
         -----------------------------------------------*/
 
-        this.actions = ACTIONS;
+        this.actions = [];
 
-        this.conditions = CONDITIONS;
+        this.conditions = [];
 
-        this.places = PLACES;
+        this.places = [];
 
         this.lastAction = -1;
 
@@ -122,15 +73,17 @@ class App {
         INICIO
     =================================================*/
 
-    init() {
+    asyncinit() {
 
         this.showSplash();
 
-        this.loadSettings();
+       this.loadSettings();
 
-        this.registerEvents();
+       await this.loadData();
 
-        this.newRound();
+       this.registerEvents();
+
+    this.newRound();
 
         UI.reset(this.timer.getRemaining());
 
@@ -161,7 +114,42 @@ class App {
         }, 1500);
 
     }
+/*=================================================
+    CARGA DE DATOS
+=================================================*/
 
+async loadData() {
+
+    try {
+
+        const [actions, conditions, places] = await Promise.all([
+
+            fetch("./data/actions.json"),
+
+            fetch("./data/conditions.json"),
+
+            fetch("./data/places.json")
+
+        ]);
+
+        this.actions = await actions.json();
+
+        this.conditions = await conditions.json();
+
+        this.places = await places.json();
+
+        console.log("Cartas cargadas correctamente.");
+
+    }
+
+    catch (error) {
+
+        console.error("Error cargando cartas:", error);
+
+    }
+
+}
+    
     /*=================================================
         EVENTOS
     =================================================*/
