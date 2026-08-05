@@ -14,8 +14,9 @@ class UI {
         this.timer = document.getElementById("timer");
         this.progress = document.getElementById("progressBar");
 
-        this.action = document.getElementById("actionText");
-        this.condition = document.getElementById("conditionText");
+       this.action = document.getElementById("actionText");
+this.condition = document.getElementById("conditionText");
+this.place = document.getElementById("placeText");
 
         this.timerPanel = document.querySelector(".timerPanel");
 
@@ -44,6 +45,14 @@ class UI {
         this.condition.textContent = text;
 
     }
+
+    showPlace(text) {
+
+    this.animate(this.place);
+
+    this.place.textContent = text;
+
+}
 
     animate(element){
 

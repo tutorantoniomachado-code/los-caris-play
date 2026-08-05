@@ -51,6 +51,20 @@ const CONDITIONS = [
     "Libre",
 
 ];
+const PLACES = [
+
+"En la boca",
+    "En la espalda",
+    "En el cuello",
+    "En el pecho",
+    "En la espalda",
+    "En los muslos",
+    "En la ingle",
+    "En los glúteos",
+    "En la parte baja de la espalda",
+    "Donde prefiera tu pareja"
+
+];
 
 /*=========================================================
     APLICACIÓN
@@ -68,9 +82,13 @@ class App {
 
         this.conditions = CONDITIONS;
 
+        this.places = PLACES;
+
         this.lastAction = -1;
 
         this.lastCondition = -1;
+
+        this.lastPlace = -1;
 
         /*-----------------------------------------------
             Configuración
@@ -378,13 +396,17 @@ class App {
 
     newRound() {
 
-        const action = this.getRandomAction();
+       const action = this.getRandomAction();
 
-        const condition = this.getRandomCondition();
+const condition = this.getRandomCondition();
 
-        UI.showAction(action);
+const place = this.getRandomPlace();
 
-        UI.showCondition(condition);
+UI.showAction(action);
+
+UI.showCondition(condition);
+
+UI.showPlace(place);
 
     }
 
@@ -463,6 +485,44 @@ class App {
         return this.conditions[index];
 
     }
+
+    /*=================================================
+    LUGAR ALEATORIO
+=================================================*/
+
+getRandomPlace() {
+
+    if (this.places.length === 0) {
+
+        return "";
+
+    }
+
+    let index;
+
+    do {
+
+        index = Math.floor(
+
+            Math.random() * this.places.length
+
+        );
+
+    }
+
+    while (
+
+        this.places.length > 1 &&
+
+        index === this.lastPlace
+
+    );
+
+    this.lastPlace = index;
+
+    return this.places[index];
+
+}
 
     /*=================================================
         SIGUIENTE RETO
