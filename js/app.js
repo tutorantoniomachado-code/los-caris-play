@@ -67,27 +67,25 @@ class App {
 
         this.init();
 
-    }
-
     /*=================================================
-        INICIO
-    =================================================*/
+    INICIO
+=================================================*/
 
-    asyncinit() {
+async init() {
 
-        this.showSplash();
+    this.showSplash();
 
-       this.loadSettings();
+    this.loadSettings();
 
-       await this.loadData();
+    await this.loadData();
 
-       this.registerEvents();
+    this.registerEvents();
 
     this.newRound();
 
-        UI.reset(this.timer.getRemaining());
+    UI.reset(this.timer.getRemaining());
 
-    }
+}
         /*=================================================
         SPLASH
     =================================================*/
